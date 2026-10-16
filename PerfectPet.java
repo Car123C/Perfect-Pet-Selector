@@ -2,12 +2,13 @@
 
 import java.util.Scanner;
 public class PerfectPet {
+// Determines if a letter is a vowel
 public static boolean isVowel(char letter) {
 letter=Character.toLowerCase(letter);
 return letter=='a'||letter =='e'||letter =='i'||letter =='o'||letter =='u';
 }
-}
 public static void main(String[]args) {
+// User inputs
 Scanner input=new Scanner(System.in);
 System.out.println("Enter color (red, blue, green):");
 String color=input.nextLine().toLowerCase();
@@ -24,6 +25,7 @@ while (!season.equals("winter")&&!season.equals("spring")&&!season.equals("summe
 }
 System.out.println("Enter name:");
 String name = input.nextLine();
+// Determines perfect pet
 String pet="";
 if (color.equals("blue")&&season.equals("fall")) {
     pet="alligator";
@@ -42,6 +44,15 @@ pet="porcupine";
 } else {
 pet="panda";
 }
+if (season.equals("summer")&&!pet.equals("dog")&&!pet.equals("panda")&&!pet.equals("porcupine")) {
+pet = "pony";
+}
+if (!isVowel(name.charAt(0))&&color.equals("blue")&&!season.equals("summer") &&!season.equals("fall") &&!pet.equals("ostrich")) {
+pet = "axolotl";
+if (pet.equals("")) {
+pet = "pet rock";
+}
 }
 System.out.println("The perfect pet for you is a " + pet + "!");
 }
+}}
